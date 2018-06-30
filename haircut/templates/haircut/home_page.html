@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Amazing Amy's Babershop</title>
+</head>
+<body>
+	<h1>Amazing Amy's Babershop</h1>
+	<p> A Fresh Cut For You and Your Family!</p>
+
+	<h2>Here are our great babers!</h2>
+
+	<!-- Baber 1 -->
+	<p>Tony</p>
+	<img src="http://tse3.mm.bing.net/th?id=OIP.XexYjoH8N4CVtVz2ebbOUwHaHa&w=204&h=203&c=7&o=5&pid=1.7">
+	<br>
+	<br>
+	<!-- Baber 2 -->
+	<p>Jane</p>
+	<img src="http://tse1.mm.bing.net/th?id=OIP.v18ucxmbVMxruuDoi2KQTwAAAA&w=125&h=175&c=7&o=5&pid=1.7">
+	<br>
+	<br>
+	<!-- Baber 3 -->
+	<p>Jack</p>
+	<img src="http://tse1.mm.bing.net/th?id=OIP.A2Jb4HxWfrSi8PesOAIgHgHaLL&w=142&h=209&c=7&o=5&pid=1.7">
+	<br>
+	<br>
+	<!-- Baber 4 -->
+	<p>Sunny</p>
+	<img src="http://tse1.mm.bing.net/th?id=OIP.FeSGsA0IeAYFnOxBF0gZ3wHaJh&w=186&h=239&c=7&o=5&pid=1.7">
+	<br>
+
+	<!-- Order Form -->
+	<h2>Place your Order</h2>
+	<form action="{% url 'haircut:home_page' %}"method= "POST">
+		{% csrf_token %}
+		<input type="text" name="time" placeholder="Please Type Which Baber You Want"><br>
+		<textarea name="customer_name" placeholder="Please Type Your Name&date" ></textarea><br>
+		<input type="submit" value="Please Your Order">
+	</form>
+
+	<!-- Show Order -->
+	<h1>Your Order:</h1>
+	<p>Baber Ordered:{{time}}</p>
+	<p>Customer and date:{{customer_name}}</p>
+
+
+
+</body>
+</html>
